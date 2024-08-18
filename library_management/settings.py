@@ -116,7 +116,7 @@ WSGI_APPLICATION = 'library_management.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(
         # Replace this value with your local database's connection string.
-        default='',
+        default='postgresql://library_7huv_user:fqTLRnJy4HTssIi97uV3qQc0hx44mZv5@dpg-cr13gr3qf0us73fihmdg-a.oregon-postgres.render.com/library_7huv',
     )
 }
 AUTH_PASSWORD_VALIDATORS = [
