@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<div class='d-flex '>
+{% for b in books %}
+<div class="card m-2" style="width: 18rem;">
+    <img src='{{b.image.url}}' class='card-img-top'style='height:200px;' alt='...'/>
+    <div class="card-body">
+      <h5 class="card-title fw-bold">{{b.title}}</h5>
+      <p class="card-text">{{b.description | truncatewords:10}}</p>
+      {% for c in b.category.all %}
+      <span>{{c.name}} </span>
+      {% endfor %}
+      <p class="card-text"><span class='fw-bold'>Price:</span> Tk.{{b.price}}</p>
+      <a href="{%url 'return' b.id %}" class="btn btn-info fw-bold">Return</a>
+    </div>
+</div>
+
+{% endfor %}
+</div>
+{% endblock  %}
+
